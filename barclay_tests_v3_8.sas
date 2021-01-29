@@ -1,21 +1,9 @@
-libname bc "C:\Users\zhani\Documents\HF_PROJECT\barclay";
+libname bc "...";
 
 /* all strategies ROR dataset */
 
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\allstrat.xlsx'
+proc import datafile = '...\allstrat.xlsx'
  out = bc.allstrat
- dbms = xlsx
- replace;
-run;
-
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\allstrat_2.xlsx'
- out = bc.allstrat_2
- dbms = xlsx
- replace;
-run;
-
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\stratonly.xlsx'
- out = bc.stratonly
  dbms = xlsx
  replace;
 run;
@@ -25,26 +13,9 @@ proc npar1way data=bc.allstrat;
    var ror;
 run;
 
-proc npar1way data=bc.allstrat_2;
-   class strategy;
-   var ror;
-run;
-
-
-proc npar1way data=bc.stratonly;
-   class strategy;
-   var ror;
-run;
-
-proc univariate data=bc.allstrat_2;
-var ROR;
-class strategy;
-cdfplot ROR / overlay;
-run;
-
 /* event driven strategy dataset */
 
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\eventdriven.xlsx'
+proc import datafile = '...\eventdriven.xlsx'
  out = bc.event
  dbms = xlsx
  replace;
@@ -595,7 +566,7 @@ ________________________________________________________________________________
 
 /* fixed income strategy dataset */
 
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\fixedincome.xlsx'
+proc import datafile = '...\fixedincome.xlsx'
  out = bc.fixed
  dbms = xlsx
  replace;
@@ -1079,7 +1050,7 @@ ________________________________________________________________________________
 
 /* market neutral strategy dataset */
 
-proc import datafile = 'C:\Users\zhani\Documents\HF_PROJECT\barclay\marketneutral.xlsx'
+proc import datafile = '...\marketneutral.xlsx'
  out = bc.neutral
  dbms = xlsx
  replace;
